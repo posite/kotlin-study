@@ -1,7 +1,28 @@
+import Colors.useEnum
+import Shapes.Rectangle
+import typecast.ExprEx
+
 fun main(args: Array<String>) {
     println("Hello World!")
+    //일반클래스 사용하기
+    println("클래스 사용하기")
+    val rec = Rectangle(10, 10)
+    println("This rectangle is ${rec.isSqared}\n")
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    //enum 클래스 사용하기
+    val color = useEnum.BLUE
+    color.rgb()
+    fun findColor(color: useEnum) =
+        when (color) {
+            useEnum.BLUE -> println("BLUE")
+            useEnum.GREEN -> println("GREEN")
+            useEnum.RED -> println("RED")
+            else -> println("nothing")
+        }
+    findColor(color)
+    println()
+
+    //스마트 캐스트 : 타입 검사와 타입 캐스트 조합
+    val type = ExprEx()
+    type.result
 }
