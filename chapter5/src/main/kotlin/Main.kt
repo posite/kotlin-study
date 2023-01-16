@@ -4,6 +4,7 @@ class Book(val title: String, val authors: List<String>)
 fun main(args: Array<String>) {
     val people = listOf(Person("Alice", 24), Person("Bob", 31), Person("Clare", 31))
     println(people.maxByOrNull { p: Person -> p.age }!!.name)
+    println(people.maxByOrNull { it.age }!!.name)
 
     val names = people.joinToString(" ") { p: Person -> p.name }
     println(names)
@@ -36,10 +37,12 @@ fun main(args: Array<String>) {
         .filter { it.startsWith('A') }
         .toList()
 
-    println(listOf(1, 2, 3, 4).asSequence()
-        .map { print("map($it) "); it * it }
-        .filter { print("filter($it) "); it % 2 == 0 }
-        .first())
+    println(
+        listOf(1, 2, 3, 4).asSequence()
+            .map { print("map($it) "); it * it }
+            .filter { print("filter($it) "); it % 2 == 0 }
+            .first()
+    )
 
     val naturalNumbers = generateSequence(0) { it + 1 }
     val numbersTo50 = naturalNumbers.takeWhile { it <= 10 }
@@ -67,7 +70,6 @@ fun main(args: Array<String>) {
             append(letter)
         }
         append("\n Now I know the alphabel!")
-
     }.toString()
     println(alphabet())
 }
