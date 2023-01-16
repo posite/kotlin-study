@@ -1,6 +1,5 @@
 lateinit var tree: String
 
-
 fun main(args: Array<String>) {
     data class Person(val name: String, val age: Int? = null) {
         fun isOlderThan(other: Person): Boolean? {
@@ -42,15 +41,16 @@ fun main(args: Array<String>) {
     foo(null)
     printAllCaps("name")
     printAllCaps(null)
-    val i :Int = 0
-    val j : Long = i.toLong()
+    val i: Int = 0
+    val j: Long = i.toLong()
 
-    fun fail(message: String): Nothing{
+    fun fail(message: String): Nothing {
         throw IllegalStateException(message)
     }
     val address = email ?: fail("no email address")
 
-    val source : Collection<Int> = arrayListOf(1,2,3,4)
-    val dest : MutableCollection<Int> = arrayListOf()
+    val source: Collection<Int> = arrayListOf(1, 2, 3, 4)
+    val dest: MutableCollection<Int> = arrayListOf()
     dest.addAll(source)
+    println(tree)
 }
