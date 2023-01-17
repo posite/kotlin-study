@@ -1,6 +1,10 @@
 data class Point(var x: Int, var y: Int)
 data class Rectangle(val upperLeft: Point, val lowerRight: Point)
 
+operator fun Point.plus(other: Point): Point{
+    return Point(x+other.x,y+other.y)
+}
+
 fun main(args: Array<String>) {
     operator fun Point.get(index: Int): Int {
         return when(index){
