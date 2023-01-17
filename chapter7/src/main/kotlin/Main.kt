@@ -1,3 +1,5 @@
+import java.beans.PropertyChangeListener
+
 data class Point(var x: Int, var y: Int)
 data class Rectangle(val upperLeft: Point, val lowerRight: Point)
 
@@ -44,4 +46,13 @@ fun main(args: Array<String>) {
     }
     val map = mapOf("Oracle" to "Java", "Jetbrains" to "Kotlin")
     printEntries(map)
+
+
+    val person = Person("Dimitry", 34, 2000)
+    person.addPropertyChangeListener(
+        PropertyChangeListener { event->
+            println("Property ${event.propertyName} changed from ${event.oldValue} to ${event.newValue}")
+        }
+    )
+    person.age =40
 }

@@ -38,5 +38,11 @@ fun main(args: Array<String>) {
         println(list.joinToString())
     }
     printContents(listOf(3,4,"4"))
+
+    fun <T> copyData(source: MutableList<out T>, destination: MutableList<T>){
+        for (item in source){
+            destination.add(item)
+        }
+    }
 }
 
